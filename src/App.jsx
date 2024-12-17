@@ -1,20 +1,18 @@
 import {useState} from 'react'
 
  export const App = ()=>{
-     // const [number, setNumber]= useState(0)
-     //
-     // const increment = ()=> setNumber((prevNumBer)=> prevNumBer+1)
-     // const decrement =()=> setNumber(number -1)
-     const [increment, setIncrement]= useState(0)
-     const [decrement, setDecrement] = useState(0)
-      return(
-          <section>
-             {/*<h1>{number}</h1>*/}
-             {/* <button onClick={increment}>increment {number}</button>*/}
-             {/* <button onClick={decrement}>decrement {number}</button>*/}
-              <button onClick={()=>setIncrement(increment+1)}>{increment}</button>
-              <button onClick={()=> setDecrement(decrement-1)}>{decrement}</button>
-          </section>
-      )
-
+    const [dostlar, setDostlar]= useState(['Lisa', 'Jennie'])
+     const addFriend= ()=> setDostlar([...dostlar, 'Rosie'])
+     const removeFriend = ()=> setDostlar(dostlar.filter((value)=> value !=='Rosie'))
+     const friendUpdateInfo=()=>setDostlar(dostlar.map((value)=> (value==="Rosie")? 'Rosie Bruna Mars' : value))
+    return (
+        <section>
+            {dostlar.map((dost)=>(
+                <p key={Math.random()}>{dost}</p>
+            ))}
+            <button onClick={addFriend}>add new friend</button>
+            <button onClick={removeFriend}>remove friend</button>
+            <button onClick={friendUpdateInfo}>Friend update names</button>
+        </section>
+    )
  }
