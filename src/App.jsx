@@ -11,7 +11,7 @@ import {useState} from 'react'
          <section>
              <h1>Kino nomi: {kino.title}</h1>
              <p>Kino rating: {kino.rating}</p>
-             <button onClick={changeRating}>Change rating</button>
+             <button onClick={changeRating}>Change ratinghe</button>
          </section>
      )
  }
